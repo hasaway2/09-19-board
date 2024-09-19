@@ -1,0 +1,7 @@
+drop table member;
+
+create table member (
+	username varchar2(10 char) primary key,
+	password varchar2(60 char),
+	email varchar2(30 char)
+) 
