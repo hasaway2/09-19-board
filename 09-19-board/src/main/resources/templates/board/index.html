@@ -16,6 +16,9 @@
 		<main>
 			<aside th:replace="~{/fragment/aside.html}"></aside>
 			<section>
+				<div class="alert alert-danger" th:if="${message!=null}">
+    				<strong th:text="${message}" ></strong>
+  				</div>
 				<h1>루트 페이지</h1>
 			</section>
 			<aside th:replace="~{/fragment/aside.html}"></aside>

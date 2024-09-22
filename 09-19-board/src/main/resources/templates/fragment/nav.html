@@ -9,6 +9,12 @@
 			$('<form action="/member/logout" method="post">').appendTo($('body')).submit();
 		});
 	});
+	
+	$(document).ready(function() {
+		$("#withdraw").click(function() {
+			$('<form action="/member/withdraw" method="post">').appendTo($('body')).submit();
+		});
+	});
 </script>
 </head>
 <body>
@@ -25,6 +31,7 @@
 				<ul class="navbar-nav me-auto" th:if="${session.username!=null}">
 					<li class="nav-item"><a class="nav-link" href="/board/write">글쓰기</a></li>
 					<li class="nav-item"><a class="nav-link" href="#" id="logout">로그아웃</a></li>
+					<li class="nav-item"><a class="nav-link" href="#" id="withdraw">탈퇴</a></li>
 					<li class="nav-item"><a class="nav-link" href="/">게시판</a></li>
 				</ul>
 			</div>

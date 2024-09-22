@@ -17,4 +17,7 @@ public interface MemberDao {
 	
 	@Select("select count(*) from member where username=#{username} and password=#{password}")
 	public int countByUsernameAndPassword(Member member);
+
+	@Delete("delete from member where username=#{username}")
+	public boolean deleteByUsername(String username);
 }

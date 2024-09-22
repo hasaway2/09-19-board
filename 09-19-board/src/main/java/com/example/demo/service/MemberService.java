@@ -26,4 +26,8 @@ public class MemberService {
 	public boolean login(MemberLoginDto dto) {
 		return memberDao.countByUsernameAndPassword(dto.toEntity())==1;
 	}
+
+	public boolean withdraw(String username) {
+		return memberDao.deleteByUsername(username);
+	}
 }

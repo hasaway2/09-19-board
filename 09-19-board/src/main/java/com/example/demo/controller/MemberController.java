@@ -79,4 +79,16 @@ public class MemberController {
 		session.invalidate();
 		return new ModelAndView("redirect:/");
 	}
+	
+	@PostMapping("/member/withdraw")
+	public ModelAndView withdraw(HttpSession session, RedirectAttributes ra) {
+		if(session.getAttribute("username")==null) {
+			ra.addFlashAttribute("message", "잘못된 작업입니다");
+			return new ModelAndView("redirect:/");
+		}
+		String username = (String)session.getAttribute("username");
+		service.withdraw(username);
+		session.invalidate();
+		return new ModelAndView("redirect:/");
+	}
 }
